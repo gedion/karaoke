@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+    <title>) : jPlayer as a flexible audio player</title>
+
+        <link href="http://happyworm.com/jPlayerLab/audiotextsync/v13/skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css"/>
+        <link id="democss" href="http://happyworm.com/jPlayerLab/audiotextsync/v13/demo.css" rel="stylesheet" type="text/css"/>
+
+        <script type="text/javascript" src="http://happyworm.com/jPlayerLab/audiotextsync/v13/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="http://happyworm.com/jPlayerLab/audiotextsync/v13/js/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+<div id="jquery_jplayer" style="position: absolute; top: 0px; left: -9999px;"><audio id="jqjp_audio_0" preload="none"></audio><div id="jqjp_force_0" style="text-indent: -9999px;">0.1852841082901142</div></div>
+
+<div class="jp-single-player">
+	<div class="jp-interface">
+		<ul class="jp-controls">
+			<li><a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#" id="jplayer_play" class="jp-play" tabindex="1">play</a></li>
+			<li><a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#" id="jplayer_pause" class="jp-pause" tabindex="1">pause</a></li>
+			<li><a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#" id="jplayer_stop" class="jp-stop" tabindex="1">stop</a></li>
+			<li><a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#" id="jplayer_volume_min" class="jp-volume-min" tabindex="1">min volume</a></li>
+			<li><a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#" id="jplayer_volume_max" class="jp-volume-max" tabindex="1">max volume</a></li>
+		</ul>
+		<div class="jp-progress">
+			<div id="jplayer_load_bar" class="jp-load-bar" style="width: 0%;">
+				<div id="jplayer_play_bar" class="jp-play-bar" style="width: 0%;"></div>
+			</div>
+		</div>
+		<div id="jplayer_volume_bar" class="jp-volume-bar">
+			<div id="jplayer_volume_bar_value" class="jp-volume-bar-value" style="width: 50%;"></div>
+		</div>
+		<div id="jplayer_play_time" class="jp-play-time">00:00</div>
+		<div id="jplayer_total_time" class="jp-total-time">00:00</div>
+	</div>
+	<div id="jplayer_playlist" class="jp-playlist">
+		<ul>
+			<li>Martin Luther King</li>
+		</ul>
+	</div>
+</div>
+
+
+     
+<form id="editmode_form">
+    <fieldset>                     
+        <label for="editmode"><input id="defaultstate" name="editmode" type="radio" value="y" checked="checked"/> Sync Mode</label>
+        <label for="editmode"><input name="editmode" type="radio" value="n"/> Playback Mode</label>   
+        <label for="editmode"><input name="editmode" type="radio" value="v"/> Image Overlay Mode</label> 
+        <label for="editmode"><input name="editmode" type="radio" value="h"/> Hack</label>   
+
+        <!-- hidden for now -->
+        <div style="display:none" class="inputdelay">
+                <label for="delay">Word delay (ms)</label>
+                <a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#">-</a>
+                <input name="delay" type="text" value="0" size="4"/>
+                <a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#">+</a>
+        </div>
+    </fieldset>
+
+
+<p id="textcontent">
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#0" id="w-0">
+I </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#1" id="w-1">am </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#2" id="w-2">happy </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#3" id="w-3">to </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#4" id="w-4">join </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#5" id="w-5">with </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#6" id="w-6">you </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#7" id="w-7">today </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#8" id="w-8">in </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#9" id="w-9">what </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#10" id="w-10">will </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#11" id="w-11">go </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#12" id="w-12">down </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#13" id="w-13">in </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#14" id="w-14">history </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#15" id="w-15">as </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#16" id="w-16">the </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#17" id="w-17">greatest </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#18" id="w-18">demonstration </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#19" id="w-19">for </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#20" id="w-20">freedom </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#21" id="w-21">in </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#22" id="w-22">the </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#23" id="w-23">history </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#24" id="w-24">of </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#25" id="w-25">our </a>
+<a href="http://happyworm.com/jPlayerLab/audiotextsync/v13/#26" id="w-26">nation.
+ </a></p>
+    <a href="#" id="syncbtn" class="actionbtn">Sync</a>
+
+    <span class="action" id="selected" style="display:none">selected</span>
+    <fieldset id="hack" style="display: none;">
+        <textarea id="textedit" cols="40" rows="4"></textarea>
+        <textarea id="timingsedit" cols="40" rows="4"></textarea>
+        <input id="imageedit" type="text">
+        <p>
+        <input id="oriwidth" type="text" size="4"/>
+        <input id="oriheight" type="text" size="4"/>
+        <input id="finwidth" type="text" size="4"/>
+        <input id="finheight" type="text" size="4"/>
+        </p>
+        <input id="hackbtn" type="button" value="update"/>
+    </fieldset>
+</form>
+
+<canvas id="myCanvas" width="1430" height="750" style="display: inline;"></canvas>
+</body>
+</html>
