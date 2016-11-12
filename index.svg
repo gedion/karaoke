@@ -1,66 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 <?xml-stylesheet href="css/animated-lyrics.css" type="text/css"?>
-<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xlink="http://www.w3.org/1999/xlink"  externalResourcesRequired="true">
+<svg  viewBox="0 0 1010 666"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      externalResourcesRequired="true">
      <rect x="0%" y="0%" width="100%" height="100%" fill="black"/>
+     <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xml="http://www.w3.org/XML/1998/namespace"
+         xmlns:sw="http://www.svgopen.org/2004/svgWow"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         onload="sw.init(); sw.animatedLyrics.init();"
+         overflow="visible">
 
-<svg width="800" height="550" viewBox="400 275 800 550" id="root" x="50%" y="50%" xmlns="http://www.w3.org/2000/svg" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:sw="http://www.svgopen.org/2004/svgWow" xmlns:xlink="http://www.w3.org/1999/xlink" onload="sw.init(); sw.animatedLyrics.init(); initLoadingAudio()" overflow="visible">
+        <script xlink:href="jslib/yahoo-dom-event.js"/>
+        <script xlink:href="jslib/animation-min.js"/>
+        <script xlink:href="jslib/dom-utils.js"/>
+        <script xlink:href="jslib/animate.js"/>
+        <script xlink:href="js/audio-collection.js"/>
+        <script xlink:href="lyrics/gara-sir-new-betish-teshome-mitiku.js"/>
+        <script xlink:href="js/animated-lyrics.js"/>
 
-    <script xlink:href="jslib/yahoo-dom-event.js"/>
-    <script xlink:href="jslib/animation-min.js"/>
-    <script xlink:href="jslib/dom-utils.js"/>
-    <script xlink:href="jslib/animate.js"/>
-    <script xlink:href="js/audio-collection.js"/>
-    <script xlink:href="lyrics/gara-sir-new-betish-teshome-mitiku.js"/>
-    <script xlink:href="js/animated-lyrics.js"/>
+        <!-- HTML 5 Audio -->
+        <foreignObject width="200" height="100">
+           <audio id="trackHTML5" autoplay="true" oncanplay="this.pause();"
+                  xmlns="http://www.w3.org/1999/xhtml">
+               <source src="https://zeima.files.wordpress.com/2009/03/gara-sir-new-betish-teshome-mitiku.mp3" />
+           </audio>
+        </foreignObject>
 
-    <!-- audio -->
+        <defs>
+            <clipPath id="viewportClip">
+                <rect width="100%" height="100%"/>
+            </clipPath>
+        </defs>
 
-    <!-- HTML 5 Audio -->
-    <foreignObject width="200" height="100">
-       <audio id="trackHTML5" autoplay="true" oncanplay="this.pause();" xmlns="http://www.w3.org/1999/xhtml" oncanplaythrough="onAudioReady();">
-           <source src="https://zeima.files.wordpress.com/2009/03/gara-sir-new-betish-teshome-mitiku.mp3" />
-       </audio>
-    </foreignObject>
+        <g clip-path="url(#viewportClip)">
+            <g text-anchor="inherit" fill="white" stroke="white"
+               transform="translate(400,275)" id="beats">
+                <g opacity="0.25" transform="translate(-336.8419609291083,-10.855159952882222)">
+                    <circle r="5" fill="none" stroke-width="3"/>
+                    <circle r="8" fill="none" stroke-width="2"/>
+                    <circle r="12" fill="none" stroke-width="4"/>
+                </g>
+            </g>
 
-    <defs>
-        <clipPath id="viewportClip">
-            <rect width="800" height="550"/>
-        </clipPath>
+            <g text-anchor="inherit"
+                fill="white"
+                fill2="rgb(254,187,6)"
+                stroke="none"
+                font-size="100"
+                font-family="jinky,'Myriad Pro', Myriad, Helvetica, sans-serif"
+                font-weight="bold"
+                transform="translate(100 ,350)"
+                id="songText">
 
-        <radialGradient id="backgroundFill" cx=".50" cy="0.50" r="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="rgb(244,159,155)"/>
-            <stop offset="0.5" stop-color="rgb(109,0,38)"/>
-            <stop offset="1" stop-color="black"/>
-        </radialGradient>
-
-        <linearGradient id="attributionsFill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="black" stop-opacity="0.7"/>
-            <stop offset="1" stop-color="black" stop-opacity="0.2"/>
-        </linearGradient>
-
-        <linearGradient id="attributionsStroke" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-            <stop offset="0" stop-color="black" stop-opacity="0.1"/>
-            <stop offset="1" stop-color="black" stop-opacity="0.8"/>
-        </linearGradient>
-        <path id="linePath"/>
-        <pattern id="imagePattern" patternUnits="userSpaceOnUse" x="0" y="0" width="800" height="550">
-            <!-- image xlink:href="http://svg-wow.org/audio/animated-lyrics_poster.png" width="800" height="550"/-->
-        </pattern>
-    </defs>
-
-    <g clip-path="url(#viewportClip)">
-
-        <rect id="bgFill" fill="url(#imagePattern)" rx="10" ry="10" width="100%" height="100%" onload="onBackgroundLoad();"/>
-        <rect id="cast" fill="black" fill-opacity="0.75" width="100%" height="100%" style="fill-opacity: 0; opacity: 0;" display="none"/>
-
-        <g text-anchor="middle" fill="white" stroke="white" transform="translate(400,275)" id="beats">
-        <g opacity="0.25" transform="translate(-336.8419609291083,-10.855159952882222)"><circle r="5" fill="none" stroke-width="3"/><circle r="8" fill="none" stroke-width="2"/><circle r="12" fill="none" stroke-width="4"/></g></g>
-
-        <g text-anchor="middle" fill="white" fill2="rgb(254,187,6)" stroke="none" font-size="100" font-family="jinky,'Myriad Pro', Myriad, Helvetica, sans-serif" font-weight="bold" transform="translate(320,240)" id="songText">
-        <text y="-25.98459027126485" transform="scale(3.4608) rotate(0)" style="opacity: 0.360851;"><textPath startOffset="49.25844114935889%" xlink:href="#linePath">  </textPath></text></g>
-
-    </g>
-</svg>
-
+                <text y="-25.98459027126485"
+                      transform="scale(3.4608) rotate(0)"
+                      style="opacity: 0.360851;">
+                     <textPath startOffset="49.25844114935889%" xlink:href="#linePath"></textPath>
+                </text>
+            </g>
+        </g>
+    </svg>
 </svg>
