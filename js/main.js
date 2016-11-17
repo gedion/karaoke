@@ -1,4 +1,5 @@
 gv_wordtimes = [];
+words = [["\n\nBejochei-iyedasesku-endalaCHawutish ",14.86,14.86],["\nSeuw-bemaydersibet-gara-sir-neuw-beitish ",21.95,21.95],["\nGara-sir-neuw-beitish ",27.63,27.63],["\nBejochei-iyedasesku-endalaCHawutish ",31.83,31.83],["\nSeuw-kemaydersibet-gara-sir-neuw-beitish ",37.56,37.56],["\nGara-sir-neuw-beitish ",43.56,43.56],["\nAynei-beruQ-aytosh,-yireCHal-emba ",53.55,53.55],["\nBemin-aQmei-chiye,-limTa-terara ",59.94,59.94],["\nAynei-beruQ-aytosh,-yireCHal-emba ",65.83,65.83],["\nBemin-aQmei-chiye,-limTa-terara ",72.24,72.24],["\nTara-sir-yaleshiw,-yeQey-bâ€™sil-frei ",126.57,126.57],["\nAlchalkum-CHakawun,-ememTat-defirei ",132.66,132.66],["\nGara-sir-siTegis,-QiTel-kale-jember ",135.84,135.84],["\nZeliye-endalmeTa,-meslogn-yemiseber? ",144.45,144.45],["\nBejochei-iyedasesku,-endalaCHawutish ",157.26,157.26],["\nSeuw-kemaydersibet,-gara-sir-neuw-beitish ",162.97,162.97],["\nGara-sir-neuw-beitish\nBejochei-iyedasesku,-endalaCHawutish ",168.83,168.83],["\nSeuw-kemaydersibet,-gara-sir-neuw-beitish ",178.93,178.93],["\nGara-sir-neuw-beitish ",184.16,184.16]]
 $(document).ready(function(){
 
     // Local copy of jQuery selectors, for performance.
@@ -111,12 +112,13 @@ $(document).ready(function(){
     var selectPlaying = false;
     function wrapWords(){
         $.each(word, function(index, value) {
-            textcontent.append('<a href="#'+index+'" id="w-'+index+'">'+value+" </a>");
+            textcontent.append('<a style="visibility: hidden;" href="#'+index+'" id="w-'+index+'">'+value+" </a>");
         });
     }
     wrapWords();
 
-    var wordTimes = new Array(word.length);
+    //var wordTimes = new Array(word.length);
+    var wordTimes = [14860,21950,27630,31830,37560,43560,53550,59940,65830,72240,126570,132660,135840,144450,157260,162970,168830,178930,184160];
     $('#textcontent a').live('click', function() {
         selectStart = null;
         selectEnd = null;
@@ -140,7 +142,10 @@ $(document).ready(function(){
     var wordIndex = 0;
     $(document).keypress(function(e){
         if(e.which == 32){
+            e.preventDefault();
             addTiming();
+            return true;
+            
         }
         // escape key for returning to synch mode
         if(e.which == 0){
@@ -171,10 +176,41 @@ $(document).ready(function(){
     }
 
     function highlightWord(i) {
-        $('#textcontent a').css('background-color','white');
-        $('#w-'+i).css('background-color','yellow');
-    }
+        //$('#textcontent a').css('background-color','white');
+        //$('#w-'+i).css('background-color','yellow');
+        //
+      var data = {
+            "minDisplayTime":0,
+            "initialDelay":0,
+            "in":{
+                "effect":"flipInX",
+                /*"delayScale":1.5,
+                "delay":10,*/
+                "sync":false,
+                callback: function(){console.log('in')}
+            },
+            "out":{
+                "effect":"fadeOutUp",
+                "delayScale":0,
+                "delay":0,
+                "sync":true,
+                callback: function(){console.log('out')}
+            },
+            "autoStart":true,
+            "inEffects":[
+            ],
+            "outEffects":[
+            "hinge"
+            ]
+        };
+        data = {"loop":false ,"in":{"effect":"fadeInUp","shuffle":false,"reverse":false,"sync":false},"out":{"effect":"fadeOutUp","shuffle":false,"reverse":false,"sync":true
+         }};
+        var word = getWord(i);
+        $('.viewport').append("<div class='tlt' id='tlt"+i+"'><ul class='texts'><li>"+word+"</li></ul></div>");
+        $('#tlt'+i).textillate(data);
 
+    }
+    gv_highlightWord = highlightWord;
     function getWord(i) {
         return $('#w-'+i).text();
     }

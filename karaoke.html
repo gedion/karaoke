@@ -10,6 +10,20 @@
         <script type="text/javascript" src="http://happyworm.com/jPlayerLab/audiotextsync/v13/js/jquery-1.4.2.min.js"></script>
         <script type="text/javascript" src="http://happyworm.com/jPlayerLab/audiotextsync/v13/js/jquery.jplayer.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+    <link href="http://cdn.foundation5.zurb.com/foundation.css" rel="stylesheet">
+
+    <link href="file:///Users/wolde034/flatiron-karaoke/css/style.css" rel="stylesheet">
+    <link href="file:///Users/wolde034/flatiron-karaoke/css/animate.css" rel="stylesheet">
+    <link href="http://textillate.js.org/assets/style.css" rel="stylesheet">
+    <script src="file:///Users/wolde034/flatiron-karaoke/js/jquery.lettering.js"></script>
+    <script src="file:///Users/wolde034/flatiron-karaoke/js/jquery.textillate.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Voces' rel='stylesheet' type='text/css'>
+    <style>
+    .playground .viewport .tlt {
+        display: table-row;
+    }
+    </style>
 </head>
 <body>
 
@@ -64,26 +78,30 @@
     </fieldset>
 
 
-<p id="textcontent"><a href="#1"  id="w-1">Bejochei iyedasesku, endalaCHawutish </a>
-<a href="#2"  id="w-2" >Seuw bemaydersibet, gara sir neuw beitish </a>
-<a href="#3"  id="w-3">Gara sir neuw beitish </a>
-<a href="#4"  id="w-4">Bejochei iyedasesku, endalaCHawutish </a>
-<a href="#5"  id="w-5">Seuw kemaydersibet, gara sir neuw beitish </a>
-<a href="#6"  id="w-6">Gara sir neuw beitish </a>
-<a href="#7"  id="w-7">Aynei beruQ aytosh, yireCHal emba </a>
-<a href="#8"  id="w-8">Bemin aQmei chiye, limTa terara </a>
-<a href="#9"  id="w-9">Aynei beruQ aytosh, yireCHal emba </a>
-<a href="#10" id="w-10">Bemin aQmei chiye, limTa terara </a>
-<a href="#11" id="w-11" >Tara sir yaleshiw, yeQey b’sil frei </a>
-<a href="#12" id="w-12">Alchalkum CHakawun, ememTat defirei </a>
-<a href="#13" id="w-13">Gara sir siTegis, QiTel kale jember </a>
-<a href="#14" id="w-14">Zeliye endalmeTa, meslogn yemiseber? </a>
-<a href="#15" id="w-15">Bejochei iyedasesku, endalaCHawutish </a>
-<a href="#16" id="w-16">Seuw kemaydersibet, gara sir neuw beitish </a>
-<a href="#17" id="w-17">Gara sir neuw beitish</a>
-<a href="#18" id="w-18">Bejochei iyedasesku, endalaCHawutish </a>
-<a href="#18" id="w-19">Seuw kemaydersibet, gara sir neuw beitish </a>
-<a href="#20" id="w-20">Gara sir neuw beitish </a>
+ <p id="textcontent" >
+
+<a href="#1"  id="w-1">Bejochei-iyedasesku-endalaCHawutish </a>
+<a href="#2" id="w-2"->Seuw-bemaydersibet-gara-sir-neuw-beitish </a>
+<a href="#3" id="w-3">Gara-sir-neuw-beitish </a>
+<a href="#4" id="w-4">Bejochei-iyedasesku-endalaCHawutish </a>
+<a href="#5" id="w-5">Seuw-kemaydersibet-gara-sir-neuw-beitish </a>
+<a href="#6" id="w-6">Gara-sir-neuw-beitish </a>
+<a href="#7" id="w-7">Aynei-beruQ-aytosh,-yireCHal-emba </a>
+<a href="#8" id="w-8">Bemin-aQmei-chiye,-limTa-terara </a>
+<a href="#9" id="w-9">Aynei-beruQ-aytosh,-yireCHal-emba </a>
+<a href="#10" id="w-10">Bemin-aQmei-chiye,-limTa-terara </a>
+<a href="#11" id="w-11"->Tara-sir-yaleshiw,-yeQey-b’sil-frei </a>
+<a href="#12" id="w-12">Alchalkum-CHakawun,-ememTat-defirei </a>
+<a href="#13" id="w-13">Gara-sir-siTegis,-QiTel-kale-jember </a>
+<a href="#14" id="w-14">Zeliye-endalmeTa,-meslogn-yemiseber? </a>
+<a href="#15" id="w-15">Bejochei-iyedasesku,-endalaCHawutish </a>
+<a href="#16" id="w-16">Seuw-kemaydersibet,-gara-sir-neuw-beitish </a>
+<a href="#17" id="w-17">Gara-sir-neuw-beitish </a>
+<a href="#18" id="w-18">Bejochei-iyedasesku,-endalaCHawutish </a>
+<a href="#18" id="w-19">Seuw-kemaydersibet,-gara-sir-neuw-beitish </a>
+<a href="#20" id="w-20">Gara-sir-neuw-beitish </a>
+
+
  </p>
     <a href="#" id="syncbtn" class="actionbtn">Sync</a>
 
@@ -103,5 +121,26 @@
 </form>
 
 <canvas id="myCanvas" width="1430" height="750" style="display: inline;"></canvas>
+    <div class="container fade in">
+  <!--    
+      <div class="grid grid-pad">
+        <section class="col-1-1">
+            <h2>Playground</h2>
+            <div class="playground grid">
+              <div class="col-1-1 viewport">
+                  <div class="tlt">
+                    <ul class="texts" style="">
+                      <li id='textitem' class="current"></li>
+                    </ul>
+                  </div>
+              </div>
+              
+            </div>
+        </section>
+      </div>
+    </div>
+-->
+              <div class="viewport">
+
 </body>
 </html>
